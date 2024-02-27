@@ -186,7 +186,7 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/Krejzy23',
     },
     {
         name: 'LinkedIn',
@@ -199,23 +199,23 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        name: 'AI SaaS Platform',
+        description: 'AI image SaaS platform that excels in image processing capabilities, integrates a secure payment infrastructure, offers advanced image search functionalities, and supports multiple AI features, including image restoration, recoloring, object removal, generative filling, and background removal.',
+        link: 'https://github.com/Krejzy23/Image-Ai',
     },
     {
         iconUrl: threads,
         theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
+        name: 'Modern Metaverse Website',
+        description: 'Simple metaverse website that uses Next 14 , Framer Motion, Tailwind CSS. Transformed design from Figma.',
+        link: 'https://github.com/Krejzy23/KrejzyVerse',
     },
     {
         iconUrl: car,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'Events application',
+        description: 'MERN Full Stack Event application, helps to create and organize events, courses, trainings.The application is connected to the Stripe payment system. ',
+        link: 'https://github.com/Krejzy23/events_platform',
     },
     {
         iconUrl: snapgram,
@@ -227,15 +227,15 @@ export const projects = [
     {
         iconUrl: estate,
         theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        name: 'Anime list',
+        description: 'Modern Next 14 Server Side App with Server Actions, Infinite Scroll & Framer Motion Animations.',
+        link: 'https://github.com/Krejzy23/Anime_List',
     },
     {
         iconUrl: summiz,
         theme: 'btn-back-yellow',
         name: 'AI Summarizer Application',
         description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+        link: 'https://github.com/Krejzy23/Summarizer_Ai',
     }
 ];

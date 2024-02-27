@@ -11,7 +11,11 @@ const Projects = () => {
       </h1>
 
       <div className="mt-5 flex-col gap-3 text-slate-500">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit natus tempora dolorem nostrum ratione tenetur labore facere ipsum aut, minima, possimus fugiat ut id voluptatibus, aspernatur libero illo atque officiis! Quae ad expedita dolorem similique ratione iure autem excepturi, ipsa ullam doloremque, cum nihil fugiat, fuga doloribus tempore exercitationem.</p>
+        <p>I've embarked on numerous projects throughout the years, but these are
+        the ones I hold closest to my heart. Many of them are open-source, so if
+        you come across something that piques your interest, feel free to
+        explore the codebase and contribute your ideas for further enhancements.
+        Your collaboration is highly valued!</p>
       </div>
 
       <div className="flex flex-wrap my-20 gap-16">
