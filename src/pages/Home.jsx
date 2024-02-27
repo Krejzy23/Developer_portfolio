@@ -1,12 +1,12 @@
 import { useState , Suspense, useEffect ,useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-// import hollow from "../assets/hollow.mp3";
+import hollow from "../assets/Hollow.mp3";
 import Loader from '../components/Loader';
 import HomeInfo from '../components/HomeInfo';
 import { Bird, Island, Plane, Sky } from "../models";
 
 
-import { soundon, soundoff} from '../assets/icons';
+import { soundon, soundoff } from '../assets/icons';
 
 
 const Home = () => {
@@ -104,13 +104,6 @@ const Home = () => {
           alt="sound"
           className='w-10 h-10 cursor-pointer object-contain'
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-        />
-      </div>
-      <div className='absolute bottom-2 right-2'>
-        <img 
-          src='./src/assets/images/logo3.png'
-          alt='logo3'
-          className='w-10 h-10 rounded-lg'
         />
       </div>
     </section>

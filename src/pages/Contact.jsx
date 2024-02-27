@@ -2,7 +2,7 @@ import React, { useState , useRef, Suspense } from 'react'
 import emailjs from '@emailjs/browser';
 import { Canvas } from '@react-three/fiber';
 
-import Fox from '../models/Fox';
+import { Fox } from '../models';
 import Loader from '../components/Loader';
 import useAlert from '../hooks/useAlert';
 import Alert from '../components/Alert';
@@ -19,6 +19,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -37,10 +38,10 @@ const Contact = () => {
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
     ).then(() => {
       setIsLoading(false);
-      showAlert({ show: true, text: 'Message sent succesfully!' ,type: 'success'})
+      showAlert({ show: true, text: 'Thank you for your message 😃' ,type: 'success'})
 
       setTimeout(() => {
-        hideAlert();
+        hideAlert(false);
         setCurrentAnimation('idle');
         setForm({ name: '', email: '', message: ''});
       },[3000])
@@ -137,7 +138,7 @@ const Contact = () => {
           <Suspense fallback={<Loader />}>
             <Fox
               position={[0.5, 0.35, 0]}
-              rotation={[12.6, -0.6, 0]}
+              rotation={[12.629, -0.6, 0]}
               scale={[0.5, 0.5, 0.5]}
               currentAnimation={currentAnimation}
             />

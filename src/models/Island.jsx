@@ -13,7 +13,12 @@ import { a } from '@react-spring/three';
 
 import islandScene from '../assets/3d/island.glb';
 
-const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props}) => {
+export function Island({
+  isRotating,
+  setIsRotating,
+  setCurrentStage,
+  ...props
+}){
   const islandRef = useRef();
 
   const {gl, viewport } = useThree();
@@ -34,11 +39,13 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props}) => {
 
     lastX.current = clientX;
   }
+
   const handlePointerUp = (e) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(false);
   }
+
   const handlePointerMove = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -59,14 +66,16 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props}) => {
   const handleKeyDown = (e) => {
     if(e.key === 'ArrowLeft'){
       if(!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y += 0.01 * Math.PI;
-      rotationSpeed.current = 0.0125;
+      islandRef.current.rotation.y += 0.005 * Math.PI;
+      rotationSpeed.current = 0.007;
     } else if(e.key === 'ArrowRight'){
       if(!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y -= 0.01 * Math.PI;
-      rotationSpeed.current = -0.0125;
+
+      islandRef.current.rotation.y -= 0.005 * Math.PI;
+      rotationSpeed.current = -0.007;
     }
   }
+
   const handleKeyUp = (e) => {
     if(e.key === 'ArrowLeft' || e.key === 'ArrowRight'){
       setIsRotating(false);
@@ -126,8 +135,6 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props}) => {
       canvas.removeEventListener("touchend", handlePointerUp);
       window.addEventListener('keydown', handleKeyDown);
       window.addEventListener('keyup', handleKeyUp);
-
-
     };
   },[gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
@@ -166,4 +173,3 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props}) => {
     </a.group>
   );
 }
-export default Island
