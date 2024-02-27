@@ -1,5 +1,6 @@
 import { useState , Suspense, useEffect ,useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { hollow } from "../assets/hollow.mp3"
 import Loader from '../components/Loader';
 import HomeInfo from '../components/HomeInfo';
 
@@ -8,7 +9,6 @@ import Island from '../models/Island';
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
 
-import hollow from '../assets/hollow.mp3';
 import { soundon, soundoff} from '../assets/icons';
 
 
@@ -63,14 +63,21 @@ const Home = () => {
   
   return (
     <section className="w-full h-screen relative">
-    <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
       {currentStage && <HomeInfo currentStage={currentStage}/>}
-    </div>
+      </div>
       <Canvas className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000}}
       >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5}/>
+          <pointLight position={[10,5,10]} intensity={2}/>
+          <spotLight
+            position={[0, 50, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={2}
+          />
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
 
           <Bird />
@@ -105,10 +112,9 @@ const Home = () => {
       <div className='absolute bottom-2 right-2'>
         <img 
           src='./src/assets/images/logo3.png'
-          alt='logo2'
+          alt='logo3'
           className='w-10 h-10 rounded-lg'
         />
-
       </div>
     </section>
   )
