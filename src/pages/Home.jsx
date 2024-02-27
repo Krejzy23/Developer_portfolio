@@ -3,11 +3,8 @@ import { Canvas } from '@react-three/fiber';
 // import hollow from "../assets/hollow.mp3";
 import Loader from '../components/Loader';
 import HomeInfo from '../components/HomeInfo';
+import { Bird, Island, Plane, Sky } from "../models";
 
-import Sky from '../models/Sky';
-import Island from '../models/Island';
-import Bird from '../models/Bird';
-import Plane from '../models/Plane';
 
 import { soundon, soundoff} from '../assets/icons';
 
