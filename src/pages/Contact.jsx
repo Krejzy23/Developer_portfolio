@@ -1,5 +1,5 @@
-import React, { useState , useRef, Suspense } from 'react'
 import emailjs from '@emailjs/browser';
+import React, { useState , useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 
 import { Fox } from '../models';
