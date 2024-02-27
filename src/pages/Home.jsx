@@ -1,6 +1,6 @@
 import { useState , Suspense, useEffect ,useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { hollow } from "../assets/hollow.mp3"
+import { hollow } from "../assets"
 import Loader from '../components/Loader';
 import HomeInfo from '../components/HomeInfo';
 
