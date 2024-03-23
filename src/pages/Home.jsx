@@ -4,7 +4,7 @@ import { useState , Suspense, useEffect ,useRef } from 'react';
 import hollow from "../assets/Hollow.mp3";
 import Loader from '../components/Loader';
 import HomeInfo from '../components/HomeInfo';
-import { Bird, Island, Plane, Sky } from "../models";
+import { Bird, Eagle, Island, Plane, Sky } from "../models";
 
 import { soundon, soundoff } from '../assets/icons';
 
@@ -85,7 +85,6 @@ const Home = () => {
             intensity={2}
           />
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
-
           <Bird />
           <Sky
             isRotating={isRotating}
@@ -103,6 +102,9 @@ const Home = () => {
             position={biplanePosition}
             rotation={[0, 20.1, 0]}
             scale={biplaneScale}
+          />
+          <Eagle 
+            scale={0.05}
           />
         </Suspense>
       </Canvas>

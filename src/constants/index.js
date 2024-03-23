@@ -23,7 +23,7 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    typescript,
 } from "../assets/icons";
 
 export const skills = [
@@ -69,7 +69,7 @@ export const skills = [
     },
     {
         imageUrl: mui,
-        name: "Material-UI",
+        name: "Shadcn",
         type: "Frontend",
     },
     {
@@ -233,9 +233,30 @@ export const projects = [
     },
     {
         iconUrl: summiz,
-        theme: 'btn-back-yellow',
+        theme: 'btn-back-teal',
         name: 'AI Summarizer Application',
         description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
         link: 'https://github.com/Krejzy23/Summarizer_Ai',
-    }
+    },
+    {
+        iconUrl: summiz,
+        theme: 'btn-back-yellow',
+        name: 'Barber Portfolio',
+        description: 'Personal portfolio .',
+        link: 'https://github.com/Krejzy23/Barber_Portfolio',
+    },
+    {
+        iconUrl: summiz,
+        theme: 'btn-back-purple',
+        name: 'Photographer Portfolio',
+        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
+        link: 'https://github.com/Krejzy23/Summarizer_Ai',
+    },
+
+
+
+
+
+
+
 ];

@@ -55,8 +55,8 @@ const About = () => {
                    className="w-[60%] h-[60%] object-contain"
                   />
                 </div>}
-                iconStyle={{ background: experience.iconBg }}
-                contentStyle={{
+                  iconStyle={{ background: experience.iconBg }}
+                  contentStyle={{
                   borderBottom: '8px',
                   borderStyle: 'solid',
                   borderBottomColor: experience.iconBg,

@@ -2,8 +2,15 @@ import { projects } from '../constants/';
 import { Link } from 'react-router-dom';
 import { arrow } from '../assets/icons';
 import CTA from '../components/CTA';
+import { Foxie } from '../models/Foxie';
+import { Canvas } from '@react-three/fiber';
+import React, { useState , useRef, Suspense } from 'react'
+import Loader from '../components/Loader';
 
 const Projects = () => {
+
+  const [currentAnimation, setCurrentAnimation] = useState('idle');
+   
   return (
     <section className="max-container ">
       <h1 className="head-text">
@@ -16,6 +23,8 @@ const Projects = () => {
         you come across something that piques your interest, feel free to
         explore the codebase and contribute your ideas for further enhancements.
         Your collaboration is highly valued!</p>
+
+        
       </div>
 
       <div className="flex flex-wrap my-20 gap-16">
@@ -58,7 +67,20 @@ const Projects = () => {
           </div>
         ))}
       </div>
-
+      <div className="flex w-full lg:h-[450px] md:h-[350px] h-[250px]">
+        <Canvas>
+          <directionalLight intensity={2.5} position={[0, 0, 1]} />
+          <ambientLight intensity={0.5} />
+          <Suspense fallback={<Loader />}>
+            <Foxie
+              position={[0, -0.65, 0]}
+              scale={[0.5, 0.5, 0.5]}
+              currentAnimation={currentAnimation}
+              rotation={[0.55, Math.PI, 0]}
+            />
+          </Suspense>
+        </Canvas>
+      </div>
       <hr className="border-slate-200"/>
       <CTA />
     </section>
