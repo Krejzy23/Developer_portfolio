@@ -129,7 +129,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <div className="lg:w-1/2 flex w-full lg:h-auto md:h-[350px] sm:h-[250px]">
+      <div className="flex w-full lg:h-[650px] md:h-[550px] sm:h-[350px]">
         <Canvas
           camera={{
             position: [0, 0, 5],
