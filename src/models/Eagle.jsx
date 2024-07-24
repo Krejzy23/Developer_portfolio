@@ -13,9 +13,9 @@ import { useFrame } from '@react-three/fiber';
 import eagle from '../assets/3d/eagle.glb';
 
 export function Eagle(props) {
-  const group = useRef()
-  const { nodes, materials, animations } = useGLTF(eagle)
-  const { actions } = useAnimations(animations, group)
+  const group = useRef();
+  const { nodes, materials, animations } = useGLTF(eagle);
+  const { actions } = useAnimations(animations, group);
 
   useFrame(({clock, camera}) => {
     group.current.position.y = Math.sin(clock.elapsedTime) * 0.2 + 2;
