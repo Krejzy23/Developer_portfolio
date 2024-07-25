@@ -239,7 +239,7 @@ export const projects = [
         link: 'https://github.com/Krejzy23/Summarizer_Ai',
     },
     {
-        iconUrl: summiz,
+        iconUrl: snapgram,
         theme: 'btn-back-yellow',
         name: 'Barber Portfolio',
         description: 'Personal portfolio .',
