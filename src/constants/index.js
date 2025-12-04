@@ -31,81 +31,97 @@ export const skills = [
         imageUrl: css,
         name: "CSS",
         type: "Frontend",
+        level: 80,
     },
     {
         imageUrl: express,
         name: "Express",
         type: "Backend",
+        level: 20,
     },
     {
         imageUrl: git,
         name: "Git",
         type: "Version Control",
+        level: 30,
     },
     {
         imageUrl: github,
         name: "GitHub",
         type: "Version Control",
+        level: 70,
     },
     {
         imageUrl: html,
         name: "HTML",
         type: "Frontend",
+        level: 80,
     },
     {
         imageUrl: javascript,
         name: "JavaScript",
         type: "Frontend",
+        level: 60,
     },
     {
         imageUrl: mongodb,
         name: "MongoDB",
         type: "Database",
+        level: 50,
     },
     {
         imageUrl: motion,
         name: "Motion",
         type: "Animation",
+        level: 70,
     },
     {
         imageUrl: mui,
         name: "Shadcn",
         type: "Frontend",
+        level: 70,
     },
     {
         imageUrl: nextjs,
         name: "Next.js",
         type: "Frontend",
+        level: 60,
     },
     {
         imageUrl: nodejs,
         name: "Node.js",
         type: "Backend",
+        level: 50,
     },
     {
         imageUrl: react,
         name: "React",
         type: "Frontend",
+        level: 70,
     },
     {
         imageUrl: redux,
         name: "Redux",
         type: "State Management",
+        level: 30,
     },
     {
         imageUrl: sass,
         name: "Sass",
         type: "Frontend",
+        level: 20,
     },
     {
         imageUrl: tailwindcss,
         name: "Tailwind CSS",
         type: "Frontend",
+        level: 70,
     },
     {
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
+        level: 40,
     }
 ];
 

@@ -12,13 +12,19 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "^9.88.17",
-    "@react-three/fiber": "^8.15.11",
+    "@react-three/drei": "^9.114.0",
+    "@react-three/fiber": "^8.17.8",
+    "@types/three": "^0.168.0",
+    "framer-motion": "^11.9.0",
+    "framer-motion-3d": "^11.9.0",
+    "gsap": "^3.12.5",
+    "leva": "^0.9.35",
+    "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
     "react-vertical-timeline-component": "^3.6.0",
-    "three": "^0.158.0"
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

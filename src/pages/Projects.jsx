@@ -69,8 +69,8 @@ const Projects = () => {
       </div>
       <div className="flex w-full lg:h-[450px] md:h-[350px] h-[250px]">
         <Canvas>
-          <directionalLight intensity={2.5} position={[0, 0, 1]} />
-          <ambientLight intensity={0.5} />
+          <directionalLight intensity={1} position={[0, 0, 1]} />
+          <ambientLight intensity={1} />
           <Suspense fallback={<Loader />}>
             <Foxie
               position={[0, -0.65, 0]}
