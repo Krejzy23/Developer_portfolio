@@ -49,7 +49,7 @@ const Contact = () => {
           hideAlert(false);
           setCurrentAnimation("idle");
           setForm({ name: "", email: "", message: "" });
-        }, [3000]);
+        }, 3000);
       })
       .catch((error) => {
         setIsLoading(false);
@@ -66,7 +66,7 @@ const Contact = () => {
   const handleBlur = () => setCurrentAnimation("idle");
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container h-[100vh]">
+    <section className="relative flex lg:flex-row flex-col max-container min-h-screen">
       {alert.show && <Alert {...alert} />}
 
       <div className="flex-1 min-w-[50%] flex flex-col">
@@ -82,7 +82,7 @@ const Contact = () => {
               type="text"
               name="name"
               className="input"
-              placeholder="John"
+              placeholder="John Doe"
               required
               value={form.name}
               onChange={handleChange}
@@ -96,7 +96,7 @@ const Contact = () => {
               type="email"
               name="email"
               className="input"
-              placeholder="john@gmail.com"
+              placeholder="john.doe@gmail.com"
               required
               value={form.email}
               onChange={handleChange}
@@ -129,7 +129,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <div className="flex w-full lg:h-[650px] md:h-[550px] sm:h-[350px]">
+      <div className="flex w-full lg:h-[650px] md:h-[500px] sm:h-[420px] h-[320px]">
         <Canvas
           camera={{
             position: [0, 0, 5],
@@ -144,7 +144,7 @@ const Contact = () => {
             <Fox
               position={[0.5, 0.35, 0]}
               rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
+              scale={[0.6, 0.6, 0.6]}
               currentAnimation={currentAnimation}
             />
           </Suspense>
