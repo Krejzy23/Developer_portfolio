@@ -43,6 +43,18 @@ const About = () => {
     return { scale, position };
   };
 
+  const toggleModel = () => {
+    if (interactionEnabled) {
+      // vypnutí modelu
+      setInteractionEnabled(false);
+      setAnimation("sit"); // nebo "sit"
+    } else {
+      // zapnutí modelu
+      setInteractionEnabled(true);
+      setAnimation("type");
+    }
+  };
+
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
@@ -78,7 +90,7 @@ const About = () => {
     if (!interactionEnabled) return; // sekce aktivní až po kliknutí
 
     if (currentSection === 0) {
-      setAnimation("idle");
+      setAnimation("sit");
     } else if (currentSection === 1) {
       setAnimation("type");
     } else if (currentSection === 2) {
@@ -100,12 +112,6 @@ const About = () => {
         >
           <div className="flex flex-col lg:flex-row items-center justify-center h-screen w-screen mx-auto max-w-7xl">
             <HeroAbout section={section} />
-            <button
-              onClick={() => setInteractionEnabled(true)}
-              className="absolute top-6 right-6 px-4 py-2 bg-blue-600 text-white rounded-xl shadow-lg z-50"
-            >
-              Aktivovat model
-            </button>
 
             <Canvas
               camera={{
@@ -158,6 +164,12 @@ const About = () => {
               <CameraLogger />
             </Canvas>
           </div>
+          <button
+            onClick={toggleModel}
+            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-xl shadow-lg z-50"
+          >
+            {interactionEnabled ? "Vypnout model" : "Aktivovat model"}
+          </button>
           <div className="flex flex-col"></div>
         </MotionConfig>
         <SkillAbout />
