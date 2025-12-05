@@ -23,7 +23,7 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
     setCurrentAnimation("hit");
-
+    emailjs.init(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -34,8 +34,7 @@ const Contact = () => {
           from_email: form.email,
           to_email: "ales.krejzl@gmail.com",
           message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        }
       )
       .then(() => {
         setIsLoading(false);
