@@ -23,7 +23,7 @@ const About = () => {
   const [interactionEnabled, setInteractionEnabled] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
   const [section, setSection] = useState(0);
-  const [animation, setAnimation] = useState("sit");
+  const [animation, setAnimation] = useState("type");
   const size = useWindowSize();
 
   const adjustCharacterForScreenSize = (width) => {
@@ -47,11 +47,11 @@ const About = () => {
     if (interactionEnabled) {
       // vypnutí modelu
       setInteractionEnabled(false);
-      setAnimation("sit"); // nebo "sit"
+      setAnimation("type"); // nebo "sit"
     } else {
       // zapnutí modelu
       setInteractionEnabled(true);
-      setAnimation("type");
+      setAnimation("clap");
     }
   };
 
@@ -123,7 +123,7 @@ const About = () => {
               className="w-full h-full"
               onClick={() => {
                 if (!interactionEnabled) return; // blokováno
-                setAnimation("type"); // povoleno po aktivaci
+                setAnimation("clap"); // povoleno po aktivaci
               }}
             >
               <ScrollControls pages={1} damping={0.1}>
