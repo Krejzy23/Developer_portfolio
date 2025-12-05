@@ -164,12 +164,11 @@ const About = () => {
               <CameraLogger />
             </Canvas>
           </div>
-          <button
-            onClick={toggleModel}
-            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-xl shadow-lg z-50"
-          >
-            {interactionEnabled ? "Vypnout model" : "Aktivovat model"}
-          </button>
+          <div className="flex w-full mt-4 justify-center md:justify-end">
+            <button onClick={toggleModel} className="w-40 text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+              {interactionEnabled ? "Turn Off" : "Turn On"}
+            </button>
+          </div>
           <div className="flex flex-col"></div>
         </MotionConfig>
         <SkillAbout />
