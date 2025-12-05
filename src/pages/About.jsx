@@ -20,6 +20,7 @@ import ExperinceAbout from "../components/About/ExperinceAbout";
 import Section from "../components/Section";
 
 const About = () => {
+  const [controlsEnabled, setControlsEnabled] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
   const [section, setSection] = useState(0);
   const [animation, setAnimation] = useState("sit");
@@ -70,7 +71,7 @@ const About = () => {
     if (width < 768) return 60;
     return 70;
   };
-  
+
   const fov = useMemo(() => getFOV(size.width || 1024), [size.width]);
 
   useEffect(() => {
@@ -96,62 +97,65 @@ const About = () => {
             restDelta: 0.0001,
           }}
         >
-            <div className="flex flex-col lg:flex-row items-center justify-center h-screen w-screen mx-auto max-w-7xl">
-              <HeroAbout section={section}/>
+          <div className="flex flex-col lg:flex-row items-center justify-center h-screen w-screen mx-auto max-w-7xl">
+            <HeroAbout section={section} />
 
-              <Canvas
-                camera={{
-                  position: [-1.82, 2.57, -3.5], // [x, y, z] pozice kamery
-                  fov: fov, // Dynamicky nastavené Field of View
-                  near: 0.1, // Blízký řez kamery
-                  far: 1000, // Vzdálený řez kamery
-                }}
-                className="w-full h-full"
-                onClick={() => setAnimation("type")}
-              >
-                <ScrollControls pages={1} damping={0.1}>
-                  <ScrollManager
-                    section={section}
-                    onSectionChange={setSection}
-                  />
-                  <Scroll>
-                    <Suspense fallback={<Loader />}>
-                      <group position={[0, -1.5, 0]}>
-                        <Office
-                          position={position}
-                          scale={scale}
-                          section={section}
-                        />
-                        <Developer
-                          position={[-1, -0.25, 0.58]}
-                          scale={scale}
-                          animation={animation}
-                        />
-                      </group>
-                    </Suspense>
-                  </Scroll>
-                </ScrollControls>
-                <OrbitControls
-                  enableZoom={false}
-                  enablePan={true}
-                  enableRotate={true}
-                  maxPolarAngle={Math.PI / 2} // Kamera se nemůže dívat pod horizont
-                  minPolarAngle={1} // Kamera se nemůže dívat nad horizont
-                  maxDistance={10} // Maximální vzdálenost kamery od cíle
-                  minDistance={1} // Minimální vzdálenost kamery od cíle gnjf
-                />
-                <ambientLight intensity={1} />
-                <spotLight position={[1, 5, 10]} angle={0.15} penumbra={1} />
-                {/* <axesHelper args={[5]} /> */}
-                <directionalLight position={[1, 1, 1]} intensity={1} />
-                <Environment preset="sunset" />
+            <Canvas
+              onPointerDown={() => {
+                setControlsEnabled(true);
+                setAnimation("type"); 
+              }}
+              onPointerUp={() => setControlsEnabled(false)}
+              onPointerLeave={() => setControlsEnabled(false)}
+              camera={{
+                position: [-1.82, 2.57, -3.5],
+                fov: fov,
+                near: 0.1,
+                far: 1000,
+              }}
+              className="w-full h-full"
+            >
+              <ScrollControls pages={1} damping={0.1}>
+                <ScrollManager section={section} onSectionChange={setSection} />
+                <Scroll>
+                  <Suspense fallback={<Loader />}>
+                    <group position={[0, -1.5, 0]}>
+                      <Office
+                        position={position}
+                        scale={scale}
+                        section={section}
+                      />
+                      <Developer
+                        position={[-1, -0.25, 0.58]}
+                        scale={scale}
+                        animation={animation}
+                      />
+                    </group>
+                  </Suspense>
+                </Scroll>
+              </ScrollControls>
+              <OrbitControls
+                enabled={controlsEnabled}
+                enableZoom={false}
+                enablePan={true}
+                enableRotate={true}
+                maxPolarAngle={Math.PI / 2} // Kamera se nemůže dívat pod horizont
+                minPolarAngle={1} // Kamera se nemůže dívat nad horizont
+                maxDistance={10} // Maximální vzdálenost kamery od cíle
+                minDistance={1} // Minimální vzdálenost kamery od cíle gnjf
+              />
+              <ambientLight intensity={1} />
+              <spotLight position={[1, 5, 10]} angle={0.15} penumbra={1} />
+              {/* <axesHelper args={[5]} /> */}
+              <directionalLight position={[1, 1, 1]} intensity={1} />
+              <Environment preset="sunset" />
 
-                <CameraLogger />
-              </Canvas>
-            </div>
+              <CameraLogger />
+            </Canvas>
+          </div>
           <div className="flex flex-col"></div>
         </MotionConfig>
-         <SkillAbout />
+        <SkillAbout />
         <ExperinceAbout />
         <CTA />
       </div>
